@@ -54,6 +54,6 @@ jobs:
         with:
           inlineScript: |
             echo "Installing containerapp extension"
-            az extension add --source https://workerappscliextension.blob.core.windows.net/azure-cli-extension/containerapp-0.2.0-py2.py3-none-any.whl --yes
+            az extension add --source https://containerappcli.blob.core.windows.net/containerapp/containerapp-0.1.0-py2.py3-none-any.whl --yes
             echo "Starting Deploying"
             az containerapp update -n ghactiontest -g my-container-apps -i haroonftstregistry.azurecr.io/ghactiontest:${{ github.sha }} --registry-login-server haroonftstregistry.azurecr.io --registry-username  ${{ secrets.REGISTRY_USERNAME }} --registry-password ${{ secrets.REGISTRY_PASSWORD }} --debug
